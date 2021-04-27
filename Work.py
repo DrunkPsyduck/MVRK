@@ -10,25 +10,38 @@ driver= '{ODBC Driver 17 for SQL Server}'
 
 def MainMenu():
     fin = False
+    Menu()
     while fin==False:
-        print("seleccione su opción: ")
-        print("\n1:Comprobar conexion a base de datos en Azure")
-        print("\n99: Salir")
-        opcion = input("Seleccione una opción: ")
-        if opcion == "1":
+      
+        opcion = input(">: ")
+        if opcion == "testconaz":
             AzureDatabaseSelect("Usuarios")
-        elif opcion == "2":
+        elif opcion == "sysinfo":
             sys.SystemInformation()
-        elif opcion == "3":
+        elif opcion == "finance":
             finance.Menu()
-        elif opcion == "99":
+        elif opcion == "menu":
+            Menu()
+        elif opcion.startswith("echo"):
+            echo(opcion)
+        elif opcion == "help" or opcion == "/?":
+            print("Comandos: menu, testconaz, sysinfo, finance, echo, scan, exit/99")
+        elif opcion == "exit" or opcion == "99":
             fin = True
             exit()
+        elif opcion == "scan":
+            print("insertar escaneo aquí")
         elif input == "":
             print("No se ha encontrado ninguna orden")
+        else:
+            print("Comando no reconocido. Ejecute help o /? para ver los comandos disponibles")
 
-        input("Pulse cualquier tecla para continuar... ")
-
+def Menu():
+    print("seleccione su opción: ")
+    print("\ntestconaz:Comprobar conexion a base de datos en Azure")
+    print("\nsysinfo:Mostrar datos del sistema")
+    print("\nfinance:Abrir menu financiero")
+    print("\n99: Salir")
 
 def AzureDatabaseSelect(tabla):
     print("Conectandose a la BBDD de Azure")
@@ -43,4 +56,9 @@ def AzureDatabaseSelect(tabla):
     print("Conexion a Azure satisfactoria")            
 
 def InsertarDoctor():
-    pint("Insertando Doctor en la tabla")
+    print("Insertando Doctor en la tabla")
+
+def echo(texto):
+    cadena = texto.replace("echo ","")
+    cadena = cadena.replace("\"","")
+    print(cadena)

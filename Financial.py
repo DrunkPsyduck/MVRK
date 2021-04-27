@@ -3,13 +3,13 @@ def Menu():
     fin = False
     while fin==False:
         print("seleccione su opción: ")
-        print("\n1: Pecio Actual BitCoin")
+        print("\n1: Pecio Actual BTC")
         print("\n99: Salir")
-        opcion = input("Seleccione una opción: ")
+        opcion = input(">: ")
         if opcion == "1":
             GetBtcCurrentPrice();
         elif opcion == "2":
-            sys.SystemInformation()
+            print("")
         elif opcion == "3":
             finance.Menu()
         elif opcion == "99":
