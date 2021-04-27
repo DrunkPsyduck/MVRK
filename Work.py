@@ -13,7 +13,7 @@ def MainMenu():
     Menu()
     while fin==False:
       
-        opcion = input(">: ")
+        opcion = input(":> ")
         if opcion == "testconaz":
             AzureDatabaseSelect("Usuarios")
         elif opcion == "sysinfo":
@@ -25,23 +25,21 @@ def MainMenu():
         elif opcion.startswith("echo"):
             echo(opcion)
         elif opcion == "help" or opcion == "/?":
-            print("Comandos: menu, testconaz, sysinfo, finance, echo, scan, exit/99")
+            print("Comandos disponibles:\n menu, testconaz, sysinfo, finance, echo, scan, info, exit/99")
         elif opcion == "exit" or opcion == "99":
             fin = True
             exit()
         elif opcion == "scan":
-            print("insertar escaneo aquí")
+            print("Llamada a scan aquí")
+        elif opcion == "info":
+            print("Línea de comandos básica que permite realizar acciones predefinidas por su creador. Se seguirán añadiendo carácteristicas cada vez más complejas")    
         elif input == "":
             print("No se ha encontrado ninguna orden")
         else:
             print("Comando no reconocido. Ejecute help o /? para ver los comandos disponibles")
 
 def Menu():
-    print("seleccione su opción: ")
-    print("\ntestconaz:Comprobar conexion a base de datos en Azure")
-    print("\nsysinfo:Mostrar datos del sistema")
-    print("\nfinance:Abrir menu financiero")
-    print("\n99: Salir")
+    print("Para ver una lista de los comandos disponibles utilice 'help' o '/?'")
 
 def AzureDatabaseSelect(tabla):
     print("Conectandose a la BBDD de Azure")
