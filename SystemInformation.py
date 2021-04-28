@@ -7,4 +7,5 @@ def SystemInformation():
     print("Developed with ❤ by Mario AKA DrunkPsyduck")
     print("Versión: " + GetVersion())
     print("Repo")
+    print("Línea de comandos básica que permite realizar acciones predefinidas por su creador. Se seguirán añadiendo carácteristicas cada vez más complejas")
     print("Desarrollado en Python")
