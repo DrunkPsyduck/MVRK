@@ -1,6 +1,8 @@
 import pyodbc
 import SystemInformation as sys
 import Financial as finance
+import platform
+import os
 #información necesario para la conexion. BD alojada en Azure
 server = 'sqlmarioc.database.windows.net'
 database = 'Proyecto'
@@ -20,21 +22,22 @@ def MainMenu():
             sys.SystemInformation()
         elif opcion == "finance":
             finance.Menu()
-        elif opcion == "menu":
-            Menu()
         elif opcion.startswith("echo"):
             echo(opcion)
         elif opcion == "help" or opcion == "/?":
-            print("Comandos disponibles:\n menu, testconaz, sysinfo, finance, echo, scan, info, exit/99")
+            print("Comandos disponibles:\n  testconaz, sysinfo, finance, echo, scan, cls/clear, exit/99")
         elif opcion == "exit" or opcion == "99":
             fin = True
             exit()
         elif opcion == "scan":
             print("Llamada a scan aquí")
-        elif opcion == "info":
-            print("Línea de comandos básica que permite realizar acciones predefinidas por su creador. Se seguirán añadiendo carácteristicas cada vez más complejas")    
         elif input == "":
             print("No se ha encontrado ninguna orden")
+        elif opcion == "cls" or opcion=="clear":
+            if platform.system() == "Windows":
+                os.system("cls")
+            else:
+                os.system("clear")
         else:
             print("Comando no reconocido. Ejecute help o /? para ver los comandos disponibles")
 
