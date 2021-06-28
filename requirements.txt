@@ -1,7 +1,2 @@
 pyodbc
-<<<<<<< HEAD
-colors
-=======
-colorama
-platform
->>>>>>> 4cbd12566f2f6d1d4043e0b720780c9a94117a01
+
